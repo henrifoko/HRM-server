@@ -16,6 +16,9 @@ public class MyAuthorization {
 
     public User userFromEmailOrId(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("=====================================");
+        System.out.println("= " + auth.getName());
+        System.out.println("=====================================");
         User user1 = userService.findUserByEmail(auth.getName());
         User user2 = userService.findUserById(auth.getName());
         User user;

@@ -1,10 +1,14 @@
 package com.frsummit.HRM.service_impl;
 
-import com.frsummit.HRM.crud_repository.RoleRepository;
-import com.frsummit.HRM.crud_repository.UserRepository;
-import com.frsummit.HRM.model.Role;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.UserService;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.jpa.repository.Modifying;
@@ -19,13 +23,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import com.frsummit.HRM.crud_repository.RoleRepository;
+import com.frsummit.HRM.crud_repository.UserRepository;
+import com.frsummit.HRM.model.Role;
+import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.UserService;
 
 @Service("userService")
 @Transactional
@@ -215,13 +217,13 @@ public class UserServiceImpl implements UserService {
         System.out.println(user);
     }
 
-    public List<User> findAllUsers(){
+	public List<User> findAllUsers() {
         return entityManager.createQuery("SELECT u FROM User AS u", User.class).getResultList();
 //        return entityManager.createQuery(usersListQuery, User.class).getResultList();
         //return null;
     }
 
-    public List<User> findAllUsersId(){
+	public List<User> findAllUsersId() {
         return entityManager.createQuery("SELECT u FROM User AS u WHERE u.id= '" + myId() + "'", User.class).getResultList();
     }
 
@@ -282,4 +284,27 @@ public class UserServiceImpl implements UserService {
         }
         return list.get(0);
     }
+
+	@Override
+	public void updateUser(String userId, String fn, String mn, String ln, String email, String dept, String desg,
+			String dob, String sex, String phone, String bg, String father, String mother, String nid,
+			String passport) {
+		Query query = entityManager.createQuery("UPDATE User u SET " + "u.firstName = '" + fn + "', u.middleName = '"
+				+ mn + "', u.lastName = '" + ln + "', u.email = '" + email + "', u.department = '" + dept
+				+ "', u.designation = '" + desg + "', u.dob = '" + dob + "', u.sex = '" + sex + "', u.phone = '" + phone
+				+ "', u.bloodGroup = '" + bg + "', u.fatherName = '" + father + "', u.motherName = '" + mother
+				+ "', u.nid = '" + nid + "', u.passportNumber = '" + passport +
+				/*
+				 * "u.presentAddress.house = '" + pr_h + "u.presentAddress.street = '" + pr_st +
+				 * "u.presentAddress.postOffice = '" + pr_po + "u.presentAddress.city = '" +
+				 * pr_city + "u.presentAddress.district = '" + pr_dis +
+				 * "u.presentAddress.country = '" + pr_cntry + "u.permanentAddress.house = '" +
+				 * p_h + "u.permanentAddress.street = '" + p_st +
+				 * "u.permanentAddress.postOffice = '" + p_po + "u.permanentAddress.city = '" +
+				 * p_city + "u.permanentAddress.district = '" + p_dis +
+				 * "u.permanentAddress.country = '" + p_cntry +
+				 */ "' WHERE u.id='" + userId + "'");
+		// query.setParameter("email", email);
+		query.executeUpdate();
+	}
 }

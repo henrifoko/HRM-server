@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+    <head>
+        <title>HRM Leave Applications</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/background.css" th:href="@{/css/background.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content">
+                <h1 class="well">Leave Applications</h1>
+                <div class="container">
+                    <div class="row">
+                        <div>
+                            <div class="row well">
+                                <h2>Update Leave Application</h2>
+                                <form action="#" th:action="@{/admin/leave-status-update}" method="get">
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <input type="text" name="leaveId"  placeholder="Leave Id" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <select name="selectStatus" class="form-control">
+                                                <option>Checking</option>
+                                                <option>Granted</option>
+                                                <option>Rejected</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-4">
+                                            <input type="text" name="message"  placeholder="Message for Client" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-2">
+                                            <button type="submit" class="btn btn-primary btn-block">Update</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <table class="table well">
+                                <h2>Recent Application</h2>
+                                <thead>
+                                    <tr>
+                                        <th>Serial</th>
+                                        <th>Leave Id</th>
+                                        <th>User Id</th>
+                                        <th>Apply To</th>
+                                        <th>Apply Date</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Type</th>
+                                        <th>Reason</th>
+                                        <th>Total Day</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="leaves, leavesStat : ${leavesList}" class="success">
+                                        <td th:text="${leavesStat.count}"></td>
+                                        <td th:text="${leaves.id}">1002461</td>
+                                        <td th:text="${leaves.userId}">1002461</td>
+                                        <td th:text="${leaves.applyWhom}">CO-ORDINATOR</td>
+                                        <td th:text="${leaves.leaveApplyDate}">12 Feb, 2018</td>
+                                        <td th:text="${leaves.leaveApplyFrom}">13 Feb, 2018</td>
+                                        <td th:text="${leaves.leaveApplyTo}">14 Feb, 2018</td>
+                                        <td th:text="${leaves.leaveType}">Personal</td>
+                                        <td th:text="${leaves.leaveReason}">Reason</td>
+                                        <td th:text="${leaves.totalDayOfLeave}">Reason</td>
+                                        <td th:text="${leaves.leaveStatus}">Granted</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

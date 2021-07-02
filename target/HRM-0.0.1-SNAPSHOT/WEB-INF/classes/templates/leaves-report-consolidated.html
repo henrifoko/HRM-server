@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/common_layout">
+
+    <head>
+        <title>HRM Home</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="all" href="../static/css/background.css" th:href="@{/css/background.css}" />
+    </head>
+    <body>
+        <div class="container">
+            <div layout:fragment="content">
+                <h1 class="well">Employee Leave Record</h1>
+                <div class="container">
+                    <div class="row well col-sm-6 form-group">
+                        <form th:action="@{/admin/leave-record-consolidated-selected-date}" method="post">
+                            <div>
+                                <!--ID-->
+                                <div class="row col-sm-8">
+                                    <label>Department</label>
+                                    <select name="department" class="form-control">
+                                        <option>CSE</option>
+                                        <option>EEE</option>
+                                        <option>TEXTILE</option>
+                                    </select>
+                                </div>
+                                <!--DEPARTMENT & ROLE-->
+                                <div class="row">
+                                    <div class="col-sm-5 form-group">
+                                        <label>From</label>
+                                        <input type="date" name="dateFrom" class="form-control"/>
+                                    </div>
+                                    <div class="col-sm-5 form-group">
+                                        <label>To</label>
+                                        <input type="date" name="dateTo" class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary custom-button-width">Load Record</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="row">
+                        <table class="table well" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Employee Id</th>
+                                    <th>Personal Taken</th>
+                                    <th>Personal Remaining</th>
+                                    <th>Sick Taken</th>
+                                    <th>Sick Remaining</th>
+                                    <th>Planned Taken</th>
+                                    <th>Planned Remaining</th>
+                                    <th>Vacation Taken</th>
+                                    <th>Vacation Remaining</th>
+                                    <th>Maternity Taken</th>
+                                    <th>Maternity Remaining</th>
+                                    <th>Other Taken</th>
+                                    <th>Other Remaining</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="success" th:each="hrRecord, hrRecordStat : ${hrRecordList}">
+                                    <td th:text="${hrRecordStat.count}">1</td>
+                                    <td th:text="${hrRecord.userId}">2014200000071</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenPersonal}">5</td>
+                                    <td th:text="${hrRecord.leaveBalancePersonal}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenSick}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceSick}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenPlanned}">5</td>
+                                    <td th:text="${hrRecord.leaveBalancePlanned}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenVacation}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceVacation}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenMaternity}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceMaternity}">5</td>
+                                    <td th:text="${hrRecord.totalLeaveTakenOther}">5</td>
+                                    <td th:text="${hrRecord.leaveBalanceOther}">5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="row well col-sm-6 form-group">
+                        <form th:action="@{/admin/leave-record-individual}" method="get">
+                            <div class="form-group" style="margin-right:20%">
+                                <label>User Id</label>
+                                <input type="text" name="userId" placeholder="Enter User Id" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-2">
+                                    <button type="submit" class="btn btn-primary custom-button-width">Load Leave Card</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

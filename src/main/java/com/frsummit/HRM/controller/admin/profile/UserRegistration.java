@@ -1,11 +1,7 @@
 package com.frsummit.HRM.controller.admin.profile;
 
-import com.frsummit.HRM.model.Attendance;
-import com.frsummit.HRM.model.HRRecord;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.AttendanceService;
-import com.frsummit.HRM.service.HRRecordService;
-import com.frsummit.HRM.service.UserService;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
+import com.frsummit.HRM.model.Attendance;
+import com.frsummit.HRM.model.HRRecord;
+import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.AttendanceService;
+import com.frsummit.HRM.service.HRRecordService;
+import com.frsummit.HRM.service.UserService;
 
 @Controller
 public class UserRegistration {
@@ -43,7 +44,7 @@ public class UserRegistration {
     public ModelAndView createNewUser(@Valid User user,
                                       @RequestParam(value = "rl") String rl,
                                       BindingResult bindingResult, Model model) {
-
+		System.out.println("T------------------------T");
         ModelAndView modelAndView = new ModelAndView();
         User userExists = userService.findUserByEmail(user.getEmail());
         if (userExists != null) {

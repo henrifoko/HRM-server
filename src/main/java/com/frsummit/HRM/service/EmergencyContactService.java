@@ -4,5 +4,5 @@ import com.frsummit.HRM.model.EmergencyContact;
 
 public interface EmergencyContactService {
 
-    public void saveEmergencyContact(EmergencyContact emergencyContact);
+	public void saveEmergencyContact(EmergencyContact emergencyContact); // stl - to expose
 }

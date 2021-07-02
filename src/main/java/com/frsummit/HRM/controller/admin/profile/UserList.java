@@ -1,12 +1,13 @@
 package com.frsummit.HRM.controller.admin.profile;
 
-import com.frsummit.HRM.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.frsummit.HRM.service.UserService;
 
 @Controller
 public class UserList {
@@ -21,7 +22,7 @@ public class UserList {
         return "profile_user_list";
     }
 
-    @RequestMapping(value = "/admin/list-user-edit", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/list-user-edit", method = RequestMethod.GET)
     public String getUserListEditAction(@RequestParam(value = "checkBox") String checkBox) {
         System.out.println(checkBox.toString());
 

@@ -1,22 +1,20 @@
 package com.frsummit.HRM.controller;
 
-import com.frsummit.HRM.config.Config;
-import com.frsummit.HRM.config.ConfigServe;
-import com.frsummit.HRM.configuration.LeaveConfiguration;
-import com.frsummit.HRM.configuration.MyAuthorization;
-import com.frsummit.HRM.model.Role;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.RoleService;
-import com.frsummit.HRM.service.UserService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.util.List;
+import com.frsummit.HRM.config.Config;
+import com.frsummit.HRM.config.ConfigServe;
+import com.frsummit.HRM.configuration.LeaveConfiguration;
+import com.frsummit.HRM.configuration.MyAuthorization;
+import com.frsummit.HRM.model.Role;
+import com.frsummit.HRM.service.RoleService;
+import com.frsummit.HRM.service.UserService;
 
 @Controller
 public class HomeController {

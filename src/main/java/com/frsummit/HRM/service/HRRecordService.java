@@ -1,15 +1,19 @@
 package com.frsummit.HRM.service;
 
-import com.frsummit.HRM.model.HRRecord;
-
 import java.util.List;
+
+import com.frsummit.HRM.model.HRRecord;
 
 public interface HRRecordService {
 
-    public void saveHRRecord(HRRecord hrRecord);
-    public List<HRRecord> getAllRecord(String userId);
-    public List<HRRecord> getAllRecordByDept(String department);
-    public List<HRRecord> findAllHRRecords();
+	public void saveHRRecord(HRRecord hrRecord); // stl - exposed
 
-    public void updateHRRecord(String userId, String leaveName, int totalLeaveTaken, int totalLeaveBalance);
+	public List<HRRecord> getAllRecord(String userId); // stl - exposed
+
+	public List<HRRecord> getAllRecordByDept(String department); // stl - exposed
+
+	public List<HRRecord> findAllHRRecords(); // stl - exposed
+
+	public void updateHRRecord(String userId, String leaveName, int totalLeaveTaken, int totalLeaveBalance); // stl -
+																												// exposed
 }

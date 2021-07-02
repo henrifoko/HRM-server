@@ -1,17 +1,25 @@
 package com.frsummit.HRM.service;
 
-import com.frsummit.HRM.model.Attendance;
-
 import java.util.List;
 
-public interface AttendanceService {
+import com.frsummit.HRM.model.Attendance;
 
-    public void saveAttendance(Attendance attendance);
-    public void remarkAttendance(String attendId);
-    public void removeFromRemarkList(String attendId);
-    public void updateAttendance(Attendance attendance, String userId);
-    public List<Attendance> myAllSignList();
-    public List<Attendance> UsersSignList();
-    public List<Attendance> remarkAttendanceList();
-    public List<Attendance> attendanceStatus(String userId);
+public interface AttendanceService {
+	public void saveAttendance(Attendance attendance); // stl - exposed
+
+	public void remarkAttendance(String attendId); // stl - exposed
+
+	public void removeFromRemarkList(String attendId); // stl - exposed
+
+	public void updateAttendance(Attendance attendance, String userId); // stl - exposed
+
+	public List<Attendance> myAllSignList(); // stf - NOT to expose
+
+	public List<Attendance> allSignList(String userId); // NEW - stl - exposed
+
+	public List<Attendance> UsersSignList(); // stl - exposed
+
+	public List<Attendance> remarkAttendanceList(); // stl - exposed
+
+	public List<Attendance> attendanceStatus(String userId); // stl - exposed
 }

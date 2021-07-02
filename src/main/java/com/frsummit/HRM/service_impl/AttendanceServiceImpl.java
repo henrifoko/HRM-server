@@ -1,10 +1,11 @@
 package com.frsummit.HRM.service_impl;
 
-import com.frsummit.HRM.crud_repository.AttendanceRepository;
-import com.frsummit.HRM.crud_repository.UserRepository;
-import com.frsummit.HRM.model.Attendance;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.AttendanceService;
+import java.util.Calendar;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.security.core.Authentication;
@@ -12,12 +13,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import java.sql.Date;
-import java.util.Calendar;
-import java.util.List;
+import com.frsummit.HRM.crud_repository.AttendanceRepository;
+import com.frsummit.HRM.crud_repository.UserRepository;
+import com.frsummit.HRM.model.Attendance;
+import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.AttendanceService;
 
 @Service("attendanceService")
 @Transactional
@@ -107,4 +107,11 @@ public class AttendanceServiceImpl implements AttendanceService {
         //myId = u.getEmail().toString();
         return myId;
     }
+
+	@Override
+	public List<Attendance> allSignList(String userId) {
+		return entityManager
+				.createQuery("SELECT a FROM Attendance AS a WHERE a.userId= '" + userId + "'", Attendance.class)
+				.getResultList();
+	}
 }

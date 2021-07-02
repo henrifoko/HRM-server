@@ -3,8 +3,13 @@ package com.frsummit.HRM.controller;
 import com.frsummit.HRM.model.Role;
 import com.frsummit.HRM.service.RoleService;
 import com.frsummit.HRM.service.UserService;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -65,21 +70,19 @@ public class LoginController {
 
 
 //    URL Call
-    /*@RequestMapping(method = RequestMethod.POST)
-    public String processForm(HttpServletRequest request, LoginForm loginForm,
-                              BindingResult result, ModelMap model)
-    {
-        String redirectUrl = request.getScheme() + "://www.yahoo.com";
-        return "redirect:" + redirectUrl;
-    }*/
+//    @RequestMapping(method = RequestMethod.POST)
+//    public String processForm(HttpServletRequest request, LoginForm loginForm,
+//                              BindingResult result, ModelMap model)
+//    {
+//        String redirectUrl = request.getScheme() + "://www.yahoo.com";
+//        return "redirect:" + redirectUrl;
+//    }
+//    
+//    @RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
+//    public String login(HttpServletRequest request){
+//
+//        String redirectUrl = request.getScheme() + "://www.yahoo.com";
+//        return "redirect:" + redirectUrl;
+//    }
 }
-
-
-/*
-    @RequestMapping(value={"/", "/login"}, method = RequestMethod.GET)
-    public String login(HttpServletRequest request){
-
-        String redirectUrl = request.getScheme() + "://www.yahoo.com";
-        return "redirect:" + redirectUrl;
-    }
- */
+ 

@@ -45,7 +45,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .dataSource(dataSource)
                 .passwordEncoder(bCryptPasswordEncoder)
                 .and()
-                .inMemoryAuthentication().withUser("summit").password("s").authorities("ADMIN");
+                .inMemoryAuthentication().withUser("f@r").password("s").authorities("ADMIN");
         auth.
                 jdbcAuthentication()
                 .usersByUsernameQuery(usersQueryId)
@@ -53,7 +53,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .dataSource(dataSource)
                 .passwordEncoder(bCryptPasswordEncoder)
                 .and()
-                .inMemoryAuthentication().withUser("summit").password("s").authorities("ADMIN");
+                .inMemoryAuthentication().withUser("f@r").password("s").authorities("ADMIN");
     }
 
     @Override
