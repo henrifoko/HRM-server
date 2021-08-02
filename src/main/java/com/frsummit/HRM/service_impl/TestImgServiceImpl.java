@@ -1,15 +1,15 @@
 package com.frsummit.HRM.service_impl;
 
-import com.frsummit.HRM.model.TestImage;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.TestImgService;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import java.util.List;
+import com.frsummit.HRM.model.TestImage;
+import com.frsummit.HRM.service.TestImgService;
 
 @Service("testImgService")
 @Transactional

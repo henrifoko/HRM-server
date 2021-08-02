@@ -15,7 +15,7 @@ public class UserList {
     @Autowired
     private UserService userService;
 
-    //@RequestMapping("/admin/users-list")
+	// @RequestMapping("/admin/users-list")
     @RequestMapping("/admin/profile-user-list")
     public String getUserList(Model model) {
         model.addAttribute("userList",userService.findAllUsers());
@@ -49,12 +49,13 @@ public class UserList {
 
         return "profile_user_list";
     }
-/*
-    @RequestMapping(value = "/admin/user-edit-list", method = RequestMethod.GET)
-    public String userListBtnFromTable(Model model, @RequestParam(value = "buttonId") String buttonId) {
-        System.out.println("Edit / Delete Clicked " + buttonId);
-        model.addAttribute("userList",userService.findAllUsers());
 
-        return "profile_user_list";
-    }*/
+	/*
+	 * @RequestMapping(value = "/admin/user-edit-list", method = RequestMethod.GET)
+	 * public String userListBtnFromTable(Model model, @RequestParam(value =
+	 * "buttonId") String buttonId) { System.out.println("Edit / Delete Clicked " +
+	 * buttonId); model.addAttribute("userList",userService.findAllUsers());
+	 * 
+	 * return "profile_user_list"; }
+	 */
 }

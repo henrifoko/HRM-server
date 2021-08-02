@@ -1,12 +1,8 @@
 package com.frsummit.HRM.controller.admin.leave;
 
-import com.frsummit.HRM.configuration.MyAuthorization;
-import com.frsummit.HRM.model.HRRecord;
-import com.frsummit.HRM.model.Leaves;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.HRRecordService;
-import com.frsummit.HRM.service.LeaveService;
-import com.frsummit.HRM.service.UserService;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.frsummit.HRM.configuration.MyAuthorization;
+import com.frsummit.HRM.model.HRRecord;
+import com.frsummit.HRM.model.Leaves;
+import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.HRRecordService;
+import com.frsummit.HRM.service.LeaveService;
+import com.frsummit.HRM.service.UserService;
 
 @Controller
 public class LeaveReportConsolidated {

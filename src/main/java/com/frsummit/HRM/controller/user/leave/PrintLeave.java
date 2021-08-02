@@ -1,30 +1,37 @@
 package com.frsummit.HRM.controller.user.leave;
 
-import com.frsummit.HRM.configuration.MyAuthorization;
-import com.frsummit.HRM.model.HRRecord;
-import com.frsummit.HRM.model.Leaves;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.EmergencyContactService;
-import com.frsummit.HRM.service.HRRecordService;
-import com.frsummit.HRM.service.LeaveService;
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.draw.VerticalPositionMark;
+import java.io.FileOutputStream;
+import java.util.Calendar;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.io.FileOutputStream;
-import java.util.Calendar;
-import java.util.List;
+import com.frsummit.HRM.configuration.MyAuthorization;
+import com.frsummit.HRM.model.HRRecord;
+import com.frsummit.HRM.model.Leaves;
+import com.frsummit.HRM.service.EmergencyContactService;
+import com.frsummit.HRM.service.HRRecordService;
+import com.frsummit.HRM.service.LeaveService;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.draw.VerticalPositionMark;
 
 @Controller
 public class PrintLeave {
 
-    private static String FILE = "C:/Users/F R Summit/Desktop/doc.pdf";
+	private static String FILE = "C:/HRM/server/files/doc.pdf";
 
     @Autowired
     private MyAuthorization myAuthorization;

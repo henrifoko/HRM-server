@@ -1,19 +1,25 @@
 package com.frsummit.HRM.controller.admin.leave;
 
-import com.frsummit.HRM.configuration.LeaveConfiguration;
-import com.frsummit.HRM.configuration.MyAuthorization;
-import com.frsummit.HRM.model.*;
-import com.frsummit.HRM.service.*;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+import com.frsummit.HRM.configuration.LeaveConfiguration;
+import com.frsummit.HRM.configuration.MyAuthorization;
+import com.frsummit.HRM.model.HRRecord;
+import com.frsummit.HRM.model.Leaves;
+import com.frsummit.HRM.model.Message;
+import com.frsummit.HRM.model.Role;
+import com.frsummit.HRM.service.HRRecordService;
+import com.frsummit.HRM.service.LeaveService;
+import com.frsummit.HRM.service.MessageService;
+import com.frsummit.HRM.service.RoleService;
+import com.frsummit.HRM.service.UserService;
 
 @Controller
 public class RecentApplications {
@@ -85,7 +91,7 @@ public class RecentApplications {
             Role parentRole = roleList2.get(1);
             int leaveIdInt = Integer.parseInt(leaveId);
             List<Leaves> leavesList = leaveService.findLeavesByLeaveId(leaveIdInt);
-            Leaves leaves = leavesList.get(0);
+			Leaves leaves = leavesList.get(0);
             System.out.println(leaves.getLeaveType());
 
             List<HRRecord> hrRecordList = hrRecordService.getAllRecord(leaves.getUserId());
@@ -119,7 +125,6 @@ public class RecentApplications {
                     }
                 }
             }
-
         }
 
         if(myAuthorization.userFromEmailOrId().getMyRole().equalsIgnoreCase("ADMIN"))

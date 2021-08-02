@@ -1,18 +1,18 @@
 package com.frsummit.HRM.controller.admin.payroll;
 
-import com.frsummit.HRM.config.ConfigAuth;
-import com.frsummit.HRM.model.Payroll;
-import com.frsummit.HRM.service.PayrollService;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
+import com.frsummit.HRM.config.ConfigAuth;
+import com.frsummit.HRM.model.Payroll;
+import com.frsummit.HRM.service.PayrollService;
 
 @Controller
 public class SetPayroll {

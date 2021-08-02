@@ -1,5 +1,7 @@
 package com.frsummit.HRM.configuration;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -10,8 +12,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-
-import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
@@ -46,14 +46,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(bCryptPasswordEncoder)
                 .and()
                 .inMemoryAuthentication().withUser("f@r").password("s").authorities("ADMIN");
-        auth.
-                jdbcAuthentication()
-                .usersByUsernameQuery(usersQueryId)
-                .authoritiesByUsernameQuery(rolesQueryId)
-                .dataSource(dataSource)
-                .passwordEncoder(bCryptPasswordEncoder)
-                .and()
-                .inMemoryAuthentication().withUser("f@r").password("s").authorities("ADMIN");
+//        auth.
+//                jdbcAuthentication()
+//                .usersByUsernameQuery(usersQueryId)
+//                .authoritiesByUsernameQuery(rolesQueryId)
+//                .dataSource(dataSource)
+//                .passwordEncoder(bCryptPasswordEncoder)
+//                .and()
+//                .inMemoryAuthentication().withUser("f@r").password("s").authorities("ADMIN");
     }
 
     @Override

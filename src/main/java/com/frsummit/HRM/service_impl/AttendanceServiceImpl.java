@@ -114,4 +114,11 @@ public class AttendanceServiceImpl implements AttendanceService {
 				.createQuery("SELECT a FROM Attendance AS a WHERE a.userId= '" + userId + "'", Attendance.class)
 				.getResultList();
 	}
+
+	@Override
+	public Attendance findById(int attendId) {
+		return (Attendance) entityManager
+				.createQuery("SELECT a FROM Attendance AS a WHERE a.attendId= '" + attendId + "'", Attendance.class)
+				.getSingleResult();
+	}
 }

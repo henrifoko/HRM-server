@@ -11,9 +11,11 @@ public interface AttendanceService {
 
 	public void removeFromRemarkList(String attendId); // stl - exposed
 
-	public void updateAttendance(Attendance attendance, String userId); // stl - exposed
+	public void updateAttendance(Attendance attendance, String userId); // stl - NOT to expose
 
 	public List<Attendance> myAllSignList(); // stf - NOT to expose
+
+	public Attendance findById(int attendId); // stl - exposed
 
 	public List<Attendance> allSignList(String userId); // NEW - stl - exposed
 
@@ -21,5 +23,5 @@ public interface AttendanceService {
 
 	public List<Attendance> remarkAttendanceList(); // stl - exposed
 
-	public List<Attendance> attendanceStatus(String userId); // stl - exposed
+	public List<Attendance> attendanceStatus(String userId); // stl - NOT expose
 }

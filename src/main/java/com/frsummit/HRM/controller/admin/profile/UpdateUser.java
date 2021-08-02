@@ -1,9 +1,7 @@
 package com.frsummit.HRM.controller.admin.profile;
 
-import com.frsummit.HRM.config.ConfigAuth;
-import com.frsummit.HRM.config.ConfigServe;
-import com.frsummit.HRM.model.User;
-import com.frsummit.HRM.service.UserService;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
+import com.frsummit.HRM.config.ConfigAuth;
+import com.frsummit.HRM.model.User;
+import com.frsummit.HRM.service.UserService;
 
 @Controller
 public class UpdateUser {

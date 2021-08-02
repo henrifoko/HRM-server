@@ -1,8 +1,18 @@
 package com.frsummit.HRM.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "hr_record")
@@ -84,7 +94,7 @@ public class HRRecord implements Serializable {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "hr_record_user", joinColumns = @JoinColumn(name = "hr_record_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> hrRecordUser;
+	private Set<User> hrRecordUser;
 
     public HRRecord() {
     }
@@ -305,11 +315,11 @@ public class HRRecord implements Serializable {
         this.leaveBalanceOther = leaveBalanceOther;
     }
 
-    public Set<User> getHrRecordUser() {
+	public Set<User> getHrRecordUser() {
         return hrRecordUser;
     }
 
-    public void setHrRecordUser(Set<User> hrRecordUser) {
+	public void setHrRecordUser(Set<User> hrRecordUser) {
         this.hrRecordUser = hrRecordUser;
     }
 }

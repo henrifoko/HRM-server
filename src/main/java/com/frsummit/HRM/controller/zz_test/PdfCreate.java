@@ -24,7 +24,7 @@ import com.itextpdf.text.pdf.draw.VerticalPositionMark;
 @Controller
 public class PdfCreate {
 
-    private static String FILE = "C:/Users/F R Summit/Desktop/doc.pdf";
+	private static String FILE = "C:\\HRM\\server\\files\\doc.pdf";
 
     @Autowired
     private MyAuthorization myAuthorization;

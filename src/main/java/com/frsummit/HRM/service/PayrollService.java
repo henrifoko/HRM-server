@@ -20,7 +20,7 @@ public interface PayrollService {
 /////    User Section    ////////////
 //////////////////////////////////////
 
-	public List<Payroll> findUserCurrentPayroll(String userId); // stl - NOT to expose
+	public List<Payroll> findUserCurrentPayroll(String userId); // stl - exposed
 
 	public List<Payroll> findUserPayrollHistory(String userId); // stl - exposed
 }
