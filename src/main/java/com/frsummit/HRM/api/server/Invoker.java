@@ -1,21 +1,72 @@
 package com.frsummit.HRM.api.server;
 
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-public class Invoker extends InvokerAbstract {
+import com.frsummit.HRM.api.server.config.GlobalConstance;
+import com.frsummit.HRM.api.server.exception.ClientException;
+import com.frsummit.HRM.api.server.exception.ServerException;
+import com.frsummit.HRM.api.server.shared.command.Command;
+import com.frsummit.HRM.api.server.shared.invoker.InvokerInterface;
 
-    private static final long serialVersionUID = 1L;
+/**
+ * 
+ */
+public class Invoker extends UnicastRemoteObject implements InvokerInterface {
 
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -2670716697296871165L;
+
+    /**
+     * 
+     */
+    private InvokerContext    invokerContext;
+
+    /**
+     * 
+     */
     public Invoker() throws RemoteException {
-        super();
-        // TODO Auto-generated constructor stub
     }
 
+    /**
+     * 
+     */
     @Override
-    public Object exec( String daoClassName, String methodName, String[] paramTypes, Object[] params,
-            Class<?> returnType ) throws RemoteException {
-        // TODO Auto-generated method stub
-        return null;
-    }
+    public Object exec( Command command ) throws RemoteException {
+        // Create the invoker context
+        invokerContext = new InvokerContext();
 
+        // Set the pre processing strategy
+        invokerContext.setPreprocessingStrategy(
+                GlobalConstance.PRE_PROCESSING_METHODS.get(
+                        command.getPreprocessingStrategy() ) );
+
+        // Set the post processing strategy
+        invokerContext.setPostprocessingStrategy(
+                GlobalConstance.POST_PROCESSING_METHODS.get(
+                        command.getPostprocessingStrategy() ) );
+
+        // Run the server process
+        Object result = null;
+
+        try {
+            result = this.invokerContext.execTemplateMethod(
+                    command.getBeanClassName(),
+                    command.getMethodName(),
+                    command.getParamTypes(),
+                    command.getParams() );
+        } catch ( ServerException e ) {
+            e.printStackTrace();
+
+            throw new RemoteException( "Server exception.", e );
+        } catch ( ClientException e ) {
+            e.printStackTrace();
+
+            throw new RemoteException( "Client exception.", e );
+        }
+
+        return result;
+    }
 }

@@ -4,30 +4,31 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings( "serial" )
 public class User implements Serializable {
-    private String id;
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String email;
-    private String phone;
-    private String dob;
-    private Address presentAddress;
-    private Address permanentAddress;
-    private String designation;
-    private String department;
-    private String imageName;
-    private String bloodGroup;
-    private String sex;
-    private String fatherName;
-    private String motherName;
-    private String nid;
-    private String passportNumber;
-    private String nationality;
-    private String incomeTexNo;
-    private String password;
-    private String myRole;
-    private int active;
+    private String    id;
+    private String    firstName;
+    private String    middleName;
+    private String    lastName;
+    private String    email;
+    private String    phone;
+    private String    dob;
+    private Address   presentAddress;
+    private Address   permanentAddress;
+    private String    designation;
+    private String    department;
+    private String    imageName;
+    private String    bloodGroup;
+    private String    sex;
+    private String    fatherName;
+    private String    motherName;
+    private String    nid;
+    private String    passportNumber;
+    private String    nationality;
+    private String    incomeTexNo;
+    private String    password;
+    private String    myRole;
+    private int       active;
     private Set<Role> roles;
 
     public User() {
@@ -37,7 +38,7 @@ public class User implements Serializable {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId( String id ) {
         this.id = id;
     }
 
@@ -45,7 +46,7 @@ public class User implements Serializable {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail( String email ) {
         this.email = email;
     }
 
@@ -53,7 +54,7 @@ public class User implements Serializable {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword( String password ) {
         this.password = password;
     }
 
@@ -61,7 +62,7 @@ public class User implements Serializable {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName( String firstName ) {
         this.firstName = firstName;
     }
 
@@ -69,7 +70,7 @@ public class User implements Serializable {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName( String lastName ) {
         this.lastName = lastName;
     }
 
@@ -77,7 +78,7 @@ public class User implements Serializable {
         return myRole;
     }
 
-    public void setMyRole(String myRole) {
+    public void setMyRole( String myRole ) {
         this.myRole = myRole;
     }
 
@@ -85,7 +86,7 @@ public class User implements Serializable {
         return active;
     }
 
-    public void setActive(int active) {
+    public void setActive( int active ) {
         this.active = active;
     }
 
@@ -93,7 +94,7 @@ public class User implements Serializable {
         return middleName;
     }
 
-    public void setMiddleName(String middleName) {
+    public void setMiddleName( String middleName ) {
         this.middleName = middleName;
     }
 
@@ -101,7 +102,7 @@ public class User implements Serializable {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone( String phone ) {
         this.phone = phone;
     }
 
@@ -109,7 +110,7 @@ public class User implements Serializable {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob( String dob ) {
         this.dob = dob;
     }
 
@@ -117,7 +118,7 @@ public class User implements Serializable {
         return presentAddress;
     }
 
-    public void setPresentAddress(Address presentAddress) {
+    public void setPresentAddress( Address presentAddress ) {
         this.presentAddress = presentAddress;
     }
 
@@ -125,7 +126,7 @@ public class User implements Serializable {
         return permanentAddress;
     }
 
-    public void setPermanentAddress(Address permanentAddress) {
+    public void setPermanentAddress( Address permanentAddress ) {
         this.permanentAddress = permanentAddress;
     }
 
@@ -133,7 +134,7 @@ public class User implements Serializable {
         return designation;
     }
 
-    public void setDesignation(String designation) {
+    public void setDesignation( String designation ) {
         this.designation = designation;
     }
 
@@ -141,7 +142,7 @@ public class User implements Serializable {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment( String department ) {
         this.department = department;
     }
 
@@ -149,7 +150,7 @@ public class User implements Serializable {
         return imageName;
     }
 
-    public void setImageName(String imageName) {
+    public void setImageName( String imageName ) {
         this.imageName = imageName;
     }
 
@@ -157,7 +158,7 @@ public class User implements Serializable {
         return bloodGroup;
     }
 
-    public void setBloodGroup(String bloodGroup) {
+    public void setBloodGroup( String bloodGroup ) {
         this.bloodGroup = bloodGroup;
     }
 
@@ -165,7 +166,7 @@ public class User implements Serializable {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex( String sex ) {
         this.sex = sex;
     }
 
@@ -173,7 +174,7 @@ public class User implements Serializable {
         return fatherName;
     }
 
-    public void setFatherName(String fatherName) {
+    public void setFatherName( String fatherName ) {
         this.fatherName = fatherName;
     }
 
@@ -181,7 +182,7 @@ public class User implements Serializable {
         return motherName;
     }
 
-    public void setMotherName(String motherName) {
+    public void setMotherName( String motherName ) {
         this.motherName = motherName;
     }
 
@@ -189,7 +190,7 @@ public class User implements Serializable {
         return nid;
     }
 
-    public void setNid(String nid) {
+    public void setNid( String nid ) {
         this.nid = nid;
     }
 
@@ -197,7 +198,7 @@ public class User implements Serializable {
         return passportNumber;
     }
 
-    public void setPassportNumber(String passportNumber) {
+    public void setPassportNumber( String passportNumber ) {
         this.passportNumber = passportNumber;
     }
 
@@ -205,7 +206,7 @@ public class User implements Serializable {
         return nationality;
     }
 
-    public void setNationality(String nationality) {
+    public void setNationality( String nationality ) {
         this.nationality = nationality;
     }
 
@@ -213,7 +214,7 @@ public class User implements Serializable {
         return incomeTexNo;
     }
 
-    public void setIncomeTexNo(String incomeTexNo) {
+    public void setIncomeTexNo( String incomeTexNo ) {
         this.incomeTexNo = incomeTexNo;
     }
 
@@ -221,12 +222,12 @@ public class User implements Serializable {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
-		Set<Role> rolesMashallable = new HashSet<Role>();
-		for (Role role : roles) {
-			rolesMashallable.add(role);
-		}
+    public void setRoles( Set<Role> roles ) {
+        Set<Role> rolesMashallable = new HashSet<Role>();
+        for ( Role role : roles ) {
+            rolesMashallable.add( role );
+        }
 
-		this.roles = rolesMashallable;
+        this.roles = rolesMashallable;
     }
 }

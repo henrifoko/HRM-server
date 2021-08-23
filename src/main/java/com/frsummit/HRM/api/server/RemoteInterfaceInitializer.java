@@ -6,37 +6,57 @@ import java.rmi.registry.Registry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.frsummit.HRM.api.server.shared.invoker.InvokerInterface;
+
+/**
+ * 
+ */
 public class RemoteInterfaceInitializer {
-	private static RemoteService service;
-	private static Registry registry = null;
-	private static final Logger LOGGER = LoggerFactory.getLogger(RemoteInterfaceRunner.class);
 
-	public final void initRemoteInterface(String hostIpAddress, int port, String remoteObjectName) throws Exception {
+    /**
+     * 
+     */
+    private static InvokerInterface service;
 
-		// Logging - info
-		LOGGER.info("Initializing RMI server...");
+    /**
+     * 
+     */
+    private static Registry         registry = null;
 
-		try {
-			System.setProperty("java.rmi.server.hostname", hostIpAddress);
-			System.setSecurityManager(new SecurityManager());
+    /**
+     * 
+     */
+    private static final Logger     LOGGER   = LoggerFactory.getLogger( RemoteInterfaceRunner.class );
 
-			RemoteInterfaceInitializer.service = new RemoteServiceImpl();
+    /**
+     * 
+     */
+    public final void initRemoteInterface( String hostIpAddress, int port, String remoteObjectName ) throws Exception {
 
-			registry = LocateRegistry.createRegistry(port);
+        // Logging - info
+        LOGGER.info( "Initializing RMI server..." );
 
-			registry.rebind(remoteObjectName, service);
+        try {
+            System.setProperty( "java.rmi.server.hostname", hostIpAddress );
+            System.setSecurityManager( new SecurityManager() );
 
-			System.out.println("[INFO] RMI :: Server is running on port " + port);
+            RemoteInterfaceInitializer.service = new Invoker();
 
-			// Logging - info
-			LOGGER.info("RMI Server is running on port " + port);
+            registry = LocateRegistry.createRegistry( port );
 
-		} catch (Exception e) {
+            registry.rebind( remoteObjectName, service );
 
-			// Logging - error
-			LOGGER.error("Error on the RMI server");
+            System.out.println( "[INFO] RMI :: Server is running on port " + port );
 
-			e.printStackTrace();
-		}
-	}
+            // Logging - info
+            LOGGER.info( "RMI Server is running on port " + port );
+
+        } catch ( Exception e ) {
+
+            // Logging - error
+            LOGGER.error( "Error on the RMI server" );
+
+            e.printStackTrace();
+        }
+    }
 }

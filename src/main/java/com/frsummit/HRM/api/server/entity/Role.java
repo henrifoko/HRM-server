@@ -2,16 +2,17 @@ package com.frsummit.HRM.api.server.entity;
 
 import java.io.Serializable;
 
+@SuppressWarnings( "serial" )
 public class Role implements Serializable {
 
-    private int id;
+    private int    id;
     private String role;
     private String roleChain;
 
     public Role() {
     }
 
-    public Role(int id, String role, String roleChain) {
+    public Role( int id, String role, String roleChain ) {
         this.id = id;
         this.role = role;
         this.roleChain = roleChain;
@@ -21,7 +22,7 @@ public class Role implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId( int id ) {
         this.id = id;
     }
 
@@ -29,7 +30,7 @@ public class Role implements Serializable {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole( String role ) {
         this.role = role;
     }
 
@@ -37,7 +38,7 @@ public class Role implements Serializable {
         return roleChain;
     }
 
-    public void setRoleChain(String roleChain) {
+    public void setRoleChain( String roleChain ) {
         this.roleChain = roleChain;
     }
 }

@@ -2,6 +2,7 @@ package com.frsummit.HRM.api.server.entity;
 
 import java.io.Serializable;
 
+@SuppressWarnings( "serial" )
 public class Address implements Serializable {
 
     private String house;
@@ -18,7 +19,7 @@ public class Address implements Serializable {
         return house;
     }
 
-    public void setHouse(String house) {
+    public void setHouse( String house ) {
         this.house = house;
     }
 
@@ -26,7 +27,7 @@ public class Address implements Serializable {
         return street;
     }
 
-    public void setStreet(String street) {
+    public void setStreet( String street ) {
         this.street = street;
     }
 
@@ -34,7 +35,7 @@ public class Address implements Serializable {
         return postOffice;
     }
 
-    public void setPostOffice(String postOffice) {
+    public void setPostOffice( String postOffice ) {
         this.postOffice = postOffice;
     }
 
@@ -42,7 +43,7 @@ public class Address implements Serializable {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setCity( String city ) {
         this.city = city;
     }
 
@@ -50,7 +51,7 @@ public class Address implements Serializable {
         return district;
     }
 
-    public void setDistrict(String district) {
+    public void setDistrict( String district ) {
         this.district = district;
     }
 
@@ -58,7 +59,7 @@ public class Address implements Serializable {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry( String country ) {
         this.country = country;
     }
 

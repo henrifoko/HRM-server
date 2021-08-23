@@ -2,8 +2,9 @@ package com.frsummit.HRM.api.server.entity;
 
 import java.io.Serializable;
 
+@SuppressWarnings( "serial" )
 public class Payroll implements Serializable {
-    private int id;
+    private int    id;
     private String userId;
     private double basic;
     private double stipen;
@@ -36,7 +37,7 @@ public class Payroll implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId( int id ) {
         this.id = id;
     }
 
@@ -44,7 +45,7 @@ public class Payroll implements Serializable {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId( String userId ) {
         this.userId = userId;
     }
 
@@ -52,7 +53,7 @@ public class Payroll implements Serializable {
         return basic;
     }
 
-    public void setBasic(double basic) {
+    public void setBasic( double basic ) {
         this.basic = basic;
     }
 
@@ -60,7 +61,7 @@ public class Payroll implements Serializable {
         return stipen;
     }
 
-    public void setStipen(double stipen) {
+    public void setStipen( double stipen ) {
         this.stipen = stipen;
     }
 
@@ -68,7 +69,7 @@ public class Payroll implements Serializable {
         return houseRent;
     }
 
-    public void setHouseRent(double houseRent) {
+    public void setHouseRent( double houseRent ) {
         this.houseRent = houseRent;
     }
 
@@ -76,7 +77,7 @@ public class Payroll implements Serializable {
         return conveyance;
     }
 
-    public void setConveyance(double conveyance) {
+    public void setConveyance( double conveyance ) {
         this.conveyance = conveyance;
     }
 
@@ -84,7 +85,7 @@ public class Payroll implements Serializable {
         return medical;
     }
 
-    public void setMedical(double medical) {
+    public void setMedical( double medical ) {
         this.medical = medical;
     }
 
@@ -92,7 +93,7 @@ public class Payroll implements Serializable {
         return advanceOrLoan;
     }
 
-    public void setAdvanceOrLoan(double advanceOrLoan) {
+    public void setAdvanceOrLoan( double advanceOrLoan ) {
         this.advanceOrLoan = advanceOrLoan;
     }
 
@@ -100,7 +101,7 @@ public class Payroll implements Serializable {
         return interest;
     }
 
-    public void setInterest(double interest) {
+    public void setInterest( double interest ) {
         this.interest = interest;
     }
 
@@ -108,7 +109,7 @@ public class Payroll implements Serializable {
         return otherAll;
     }
 
-    public void setOtherAll(double otherAll) {
+    public void setOtherAll( double otherAll ) {
         this.otherAll = otherAll;
     }
 
@@ -116,7 +117,7 @@ public class Payroll implements Serializable {
         return educationalAll;
     }
 
-    public void setEducationalAll(double educationalAll) {
+    public void setEducationalAll( double educationalAll ) {
         this.educationalAll = educationalAll;
     }
 
@@ -124,7 +125,7 @@ public class Payroll implements Serializable {
         return bonus;
     }
 
-    public void setBonus(double bonus) {
+    public void setBonus( double bonus ) {
         this.bonus = bonus;
     }
 
@@ -132,7 +133,7 @@ public class Payroll implements Serializable {
         return incentiveOrCommission;
     }
 
-    public void setIncentiveOrCommission(double incentiveOrCommission) {
+    public void setIncentiveOrCommission( double incentiveOrCommission ) {
         this.incentiveOrCommission = incentiveOrCommission;
     }
 
@@ -140,7 +141,7 @@ public class Payroll implements Serializable {
         return leaveEncashment;
     }
 
-    public void setLeaveEncashment(double leaveEncashment) {
+    public void setLeaveEncashment( double leaveEncashment ) {
         this.leaveEncashment = leaveEncashment;
     }
 
@@ -148,7 +149,7 @@ public class Payroll implements Serializable {
         return perquisite;
     }
 
-    public void setPerquisite(double perquisite) {
+    public void setPerquisite( double perquisite ) {
         this.perquisite = perquisite;
     }
 
@@ -156,7 +157,7 @@ public class Payroll implements Serializable {
         return reimbursement;
     }
 
-    public void setReimbursement(double reimbursement) {
+    public void setReimbursement( double reimbursement ) {
         this.reimbursement = reimbursement;
     }
 
@@ -164,7 +165,7 @@ public class Payroll implements Serializable {
         return special;
     }
 
-    public void setSpecial(double special) {
+    public void setSpecial( double special ) {
         this.special = special;
     }
 
@@ -172,7 +173,7 @@ public class Payroll implements Serializable {
         return overtime;
     }
 
-    public void setOvertime(double overtime) {
+    public void setOvertime( double overtime ) {
         this.overtime = overtime;
     }
 
@@ -180,7 +181,7 @@ public class Payroll implements Serializable {
         return arrears;
     }
 
-    public void setArrears(double arrears) {
+    public void setArrears( double arrears ) {
         this.arrears = arrears;
     }
 
@@ -188,7 +189,7 @@ public class Payroll implements Serializable {
         return childFund;
     }
 
-    public void setChildFund(double childFund) {
+    public void setChildFund( double childFund ) {
         this.childFund = childFund;
     }
 
@@ -196,7 +197,7 @@ public class Payroll implements Serializable {
         return tds;
     }
 
-    public void setTds(double tds) {
+    public void setTds( double tds ) {
         this.tds = tds;
     }
 
@@ -204,7 +205,7 @@ public class Payroll implements Serializable {
         return interestDED;
     }
 
-    public void setInterestDED(double interestDED) {
+    public void setInterestDED( double interestDED ) {
         this.interestDED = interestDED;
     }
 
@@ -212,7 +213,7 @@ public class Payroll implements Serializable {
         return pf;
     }
 
-    public void setPf(double pf) {
+    public void setPf( double pf ) {
         this.pf = pf;
     }
 
@@ -220,7 +221,7 @@ public class Payroll implements Serializable {
         return professionalTaxDED;
     }
 
-    public void setProfessionalTaxDED(double professionalTaxDED) {
+    public void setProfessionalTaxDED( double professionalTaxDED ) {
         this.professionalTaxDED = professionalTaxDED;
     }
 
@@ -228,7 +229,7 @@ public class Payroll implements Serializable {
         return advanceOrLoanDED;
     }
 
-    public void setAdvanceOrLoanDED(double advanceOrLoanDED) {
+    public void setAdvanceOrLoanDED( double advanceOrLoanDED ) {
         this.advanceOrLoanDED = advanceOrLoanDED;
     }
 
@@ -236,7 +237,7 @@ public class Payroll implements Serializable {
         return otherDED;
     }
 
-    public void setOtherDED(double otherDED) {
+    public void setOtherDED( double otherDED ) {
         this.otherDED = otherDED;
     }
 
@@ -244,7 +245,7 @@ public class Payroll implements Serializable {
         return leaveDED;
     }
 
-    public void setLeaveDED(double leaveDED) {
+    public void setLeaveDED( double leaveDED ) {
         this.leaveDED = leaveDED;
     }
 
@@ -252,7 +253,7 @@ public class Payroll implements Serializable {
         return securityDepositeDED;
     }
 
-    public void setSecurityDepositeDED(double securityDepositeDED) {
+    public void setSecurityDepositeDED( double securityDepositeDED ) {
         this.securityDepositeDED = securityDepositeDED;
     }
 }

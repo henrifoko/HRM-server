@@ -4,18 +4,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Service;
 
+/**
+ * 
+ * @author hfoko
+ *
+ */
 @Service
 public class ContextWrapper {
 
-	private static ConfigurableApplicationContext context;
+    private static ConfigurableApplicationContext context;
 
-	@Autowired
-	public ContextWrapper(ConfigurableApplicationContext ac) {
-		context = ac;
-	}
+    /**
+     * 
+     * @param ac
+     */
+    @Autowired
+    public ContextWrapper( ConfigurableApplicationContext ac ) {
+        context = ac;
+    }
 
-	public static ConfigurableApplicationContext getContext() {
-		return context;
-	}
+    /**
+     * 
+     * @return
+     */
+    public static ConfigurableApplicationContext getContext() {
+        return context;
+    }
 
 }

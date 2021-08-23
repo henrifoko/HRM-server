@@ -1,16 +1,24 @@
-package com.frsummit.HRM.api.server;
+package com.frsummit.HRM.api.server.converions;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import com.frsummit.HRM.api.server.config.GlobalConfig;
-import com.frsummit.HRM.api.server.config.GlobalConstance;
+import com.frsummit.HRM.api.server.exception.PreProcessingException;
 import com.frsummit.HRM.api.server.util.ModelConverter;
 
-public class PreProcessingRegularStrategy implements PreProcessingStrategy {
+/**
+ * 
+ * @author hfoko
+ *
+ */
+public class PreprocessingRegularStrategy implements IPreprocessingStrategy {
 
+    /**
+     * 
+     */
     @Override
-    public Object[] process( Object[] data ) {
+    public Object[] process( Object[] data ) throws PreProcessingException {
         Object[] result = new Object[data.length];
         Object elt;
         for ( int i = 0, l = data.length; i < l; i++ ) {
@@ -20,25 +28,35 @@ public class PreProcessingRegularStrategy implements PreProcessingStrategy {
             } else if ( isEntity( elt ) ) {
                 Method method;
                 try {
-                    method = ModelConverter.class.getMethod( "getApiVersion", elt.getClass() );
+                    method = ModelConverter.class.getMethod( "getServerVersion", elt.getClass() );
                     try {
-                        result[i] = method.invoke( null, result );
+                        result[i] = method.invoke( null, elt );
                     } catch ( IllegalAccessException e ) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
+                        throw new PreProcessingException();
+
                     } catch ( IllegalArgumentException e ) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
+                        throw new PreProcessingException();
+
                     } catch ( InvocationTargetException e ) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
+                        throw new PreProcessingException();
+
                     }
                 } catch ( NoSuchMethodException e ) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
+                    throw new PreProcessingException();
+
                 } catch ( SecurityException e ) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
+                    throw new PreProcessingException();
+
                 }
             } else {
                 result[i] = data[i];
@@ -47,20 +65,18 @@ public class PreProcessingRegularStrategy implements PreProcessingStrategy {
         return result;
     }
 
+    /**
+     * 
+     */
     private boolean isPrimitive( Object obj ) {
-        if ( GlobalConstance.PRIMITIVE_TYPES.containsKey( obj.getClass().getName() ) ) {
-            return true;
-        } else {
-            return false;
-        }
+        return obj.getClass().isPrimitive();
     }
 
+    /**
+     * 
+     */
     private boolean isEntity( Object obj ) {
-        if ( GlobalConfig.ENTITY_PACKAGE_NAME.equals( obj.getClass().getPackageName() ) ) {
-            return true;
-        } else {
-            return false;
-        }
+        return GlobalConfig.ENTITY_PACKAGE_NAME.equals( obj.getClass().getPackageName() );
     }
 
 }

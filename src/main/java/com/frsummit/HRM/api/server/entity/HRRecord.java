@@ -4,40 +4,44 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings( "serial" )
 public class HRRecord implements Serializable {
-	
-    private int id;
-    private String userId;
-    private int totalLeave;
-    private int totalLeavePersonal;
-    private int totalLeaveSick;
-    private int totalLeavePlanned;
-    private int totalLeaveVacation;
-    private int totalLeaveMaternity;
-    private int totalLeaveOther;
-    private int totalLeaveTaken;
-    private int totalLeaveTakenPersonal;
-    private int totalLeaveTakenSick;
-    private int totalLeaveTakenPlanned;
-    private int totalLeaveTakenVacation;
-    private int totalLeaveTakenMaternity;
-    private int totalLeaveTakenOther;
-    private int leaveBalance;
-    private int leaveBalancePersonal;
-    private int leaveBalanceSick;
-    private int leaveBalancePlanned;
-    private int leaveBalanceVacation;
-    private int leaveBalanceMaternity;
-    private int leaveBalanceOther;
+
+    private int       id;
+    private String    userId;
+    private int       totalLeave;
+    private int       totalLeavePersonal;
+    private int       totalLeaveSick;
+    private int       totalLeavePlanned;
+    private int       totalLeaveVacation;
+    private int       totalLeaveMaternity;
+    private int       totalLeaveOther;
+    private int       totalLeaveTaken;
+    private int       totalLeaveTakenPersonal;
+    private int       totalLeaveTakenSick;
+    private int       totalLeaveTakenPlanned;
+    private int       totalLeaveTakenVacation;
+    private int       totalLeaveTakenMaternity;
+    private int       totalLeaveTakenOther;
+    private int       leaveBalance;
+    private int       leaveBalancePersonal;
+    private int       leaveBalanceSick;
+    private int       leaveBalancePlanned;
+    private int       leaveBalanceVacation;
+    private int       leaveBalanceMaternity;
+    private int       leaveBalanceOther;
     private Set<User> hrRecordUser;
 
     public HRRecord() {
     }
 
-    public HRRecord(String userId, int totalLeave, int totalLeaveTaken, int leaveBalance,
-                    int totalLeavePersonal, int totalLeaveSick, int totalLeavePlanned, int totalLeaveVacation, int totalLeaveMaternity, int totalLeaveOther,
-                    int totalLeaveTakenPersonal, int totalLeaveTakenSick, int totalLeaveTakenPlanned, int totalLeaveTakenVacation, int totalLeaveTakenMaternity, int totalLeaveTakenOther,
-                    int leaveBalancePersonal, int leaveBalanceSick, int leaveBalancePlanned, int leaveBalanceVacation, int leaveBalanceMaternity, int leaveBalanceOther) {
+    public HRRecord( String userId, int totalLeave, int totalLeaveTaken, int leaveBalance,
+            int totalLeavePersonal, int totalLeaveSick, int totalLeavePlanned, int totalLeaveVacation,
+            int totalLeaveMaternity, int totalLeaveOther,
+            int totalLeaveTakenPersonal, int totalLeaveTakenSick, int totalLeaveTakenPlanned,
+            int totalLeaveTakenVacation, int totalLeaveTakenMaternity, int totalLeaveTakenOther,
+            int leaveBalancePersonal, int leaveBalanceSick, int leaveBalancePlanned, int leaveBalanceVacation,
+            int leaveBalanceMaternity, int leaveBalanceOther ) {
 
         this.userId = userId;
         this.totalLeave = totalLeave;
@@ -70,7 +74,7 @@ public class HRRecord implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId( int id ) {
         this.id = id;
     }
 
@@ -78,7 +82,7 @@ public class HRRecord implements Serializable {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId( String userId ) {
         this.userId = userId;
     }
 
@@ -86,7 +90,7 @@ public class HRRecord implements Serializable {
         return totalLeave;
     }
 
-    public void setTotalLeave(int totalLeave) {
+    public void setTotalLeave( int totalLeave ) {
         this.totalLeave = totalLeave;
     }
 
@@ -94,7 +98,7 @@ public class HRRecord implements Serializable {
         return totalLeavePersonal;
     }
 
-    public void setTotalLeavePersonal(int totalLeavePersonal) {
+    public void setTotalLeavePersonal( int totalLeavePersonal ) {
         this.totalLeavePersonal = totalLeavePersonal;
     }
 
@@ -102,7 +106,7 @@ public class HRRecord implements Serializable {
         return totalLeaveSick;
     }
 
-    public void setTotalLeaveSick(int totalLeaveSick) {
+    public void setTotalLeaveSick( int totalLeaveSick ) {
         this.totalLeaveSick = totalLeaveSick;
     }
 
@@ -110,7 +114,7 @@ public class HRRecord implements Serializable {
         return totalLeavePlanned;
     }
 
-    public void setTotalLeavePlanned(int totalLeavePlanned) {
+    public void setTotalLeavePlanned( int totalLeavePlanned ) {
         this.totalLeavePlanned = totalLeavePlanned;
     }
 
@@ -118,7 +122,7 @@ public class HRRecord implements Serializable {
         return totalLeaveVacation;
     }
 
-    public void setTotalLeaveVacation(int totalLeaveVacation) {
+    public void setTotalLeaveVacation( int totalLeaveVacation ) {
         this.totalLeaveVacation = totalLeaveVacation;
     }
 
@@ -126,7 +130,7 @@ public class HRRecord implements Serializable {
         return totalLeaveMaternity;
     }
 
-    public void setTotalLeaveMaternity(int totalLeaveMaternity) {
+    public void setTotalLeaveMaternity( int totalLeaveMaternity ) {
         this.totalLeaveMaternity = totalLeaveMaternity;
     }
 
@@ -134,7 +138,7 @@ public class HRRecord implements Serializable {
         return totalLeaveOther;
     }
 
-    public void setTotalLeaveOther(int totalLeaveOther) {
+    public void setTotalLeaveOther( int totalLeaveOther ) {
         this.totalLeaveOther = totalLeaveOther;
     }
 
@@ -142,7 +146,7 @@ public class HRRecord implements Serializable {
         return totalLeaveTaken;
     }
 
-    public void setTotalLeaveTaken(int totalLeaveTaken) {
+    public void setTotalLeaveTaken( int totalLeaveTaken ) {
         this.totalLeaveTaken = totalLeaveTaken;
     }
 
@@ -150,7 +154,7 @@ public class HRRecord implements Serializable {
         return totalLeaveTakenPersonal;
     }
 
-    public void setTotalLeaveTakenPersonal(int totalLeaveTakenPersonal) {
+    public void setTotalLeaveTakenPersonal( int totalLeaveTakenPersonal ) {
         this.totalLeaveTakenPersonal = totalLeaveTakenPersonal;
     }
 
@@ -158,7 +162,7 @@ public class HRRecord implements Serializable {
         return totalLeaveTakenSick;
     }
 
-    public void setTotalLeaveTakenSick(int totalLeaveTakenSick) {
+    public void setTotalLeaveTakenSick( int totalLeaveTakenSick ) {
         this.totalLeaveTakenSick = totalLeaveTakenSick;
     }
 
@@ -166,7 +170,7 @@ public class HRRecord implements Serializable {
         return totalLeaveTakenPlanned;
     }
 
-    public void setTotalLeaveTakenPlanned(int totalLeaveTakenPlanned) {
+    public void setTotalLeaveTakenPlanned( int totalLeaveTakenPlanned ) {
         this.totalLeaveTakenPlanned = totalLeaveTakenPlanned;
     }
 
@@ -174,7 +178,7 @@ public class HRRecord implements Serializable {
         return totalLeaveTakenVacation;
     }
 
-    public void setTotalLeaveTakenVacation(int totalLeaveTakenVacation) {
+    public void setTotalLeaveTakenVacation( int totalLeaveTakenVacation ) {
         this.totalLeaveTakenVacation = totalLeaveTakenVacation;
     }
 
@@ -182,7 +186,7 @@ public class HRRecord implements Serializable {
         return totalLeaveTakenMaternity;
     }
 
-    public void setTotalLeaveTakenMaternity(int totalLeaveTakenMaternity) {
+    public void setTotalLeaveTakenMaternity( int totalLeaveTakenMaternity ) {
         this.totalLeaveTakenMaternity = totalLeaveTakenMaternity;
     }
 
@@ -190,7 +194,7 @@ public class HRRecord implements Serializable {
         return totalLeaveTakenOther;
     }
 
-    public void setTotalLeaveTakenOther(int totalLeaveTakenOther) {
+    public void setTotalLeaveTakenOther( int totalLeaveTakenOther ) {
         this.totalLeaveTakenOther = totalLeaveTakenOther;
     }
 
@@ -198,7 +202,7 @@ public class HRRecord implements Serializable {
         return leaveBalance;
     }
 
-    public void setLeaveBalance(int leaveBalance) {
+    public void setLeaveBalance( int leaveBalance ) {
         this.leaveBalance = leaveBalance;
     }
 
@@ -206,7 +210,7 @@ public class HRRecord implements Serializable {
         return leaveBalancePersonal;
     }
 
-    public void setLeaveBalancePersonal(int leaveBalancePersonal) {
+    public void setLeaveBalancePersonal( int leaveBalancePersonal ) {
         this.leaveBalancePersonal = leaveBalancePersonal;
     }
 
@@ -214,7 +218,7 @@ public class HRRecord implements Serializable {
         return leaveBalanceSick;
     }
 
-    public void setLeaveBalanceSick(int leaveBalanceSick) {
+    public void setLeaveBalanceSick( int leaveBalanceSick ) {
         this.leaveBalanceSick = leaveBalanceSick;
     }
 
@@ -222,7 +226,7 @@ public class HRRecord implements Serializable {
         return leaveBalancePlanned;
     }
 
-    public void setLeaveBalancePlanned(int leaveBalancePlanned) {
+    public void setLeaveBalancePlanned( int leaveBalancePlanned ) {
         this.leaveBalancePlanned = leaveBalancePlanned;
     }
 
@@ -230,7 +234,7 @@ public class HRRecord implements Serializable {
         return leaveBalanceVacation;
     }
 
-    public void setLeaveBalanceVacation(int leaveBalanceVacation) {
+    public void setLeaveBalanceVacation( int leaveBalanceVacation ) {
         this.leaveBalanceVacation = leaveBalanceVacation;
     }
 
@@ -238,7 +242,7 @@ public class HRRecord implements Serializable {
         return leaveBalanceMaternity;
     }
 
-    public void setLeaveBalanceMaternity(int leaveBalanceMaternity) {
+    public void setLeaveBalanceMaternity( int leaveBalanceMaternity ) {
         this.leaveBalanceMaternity = leaveBalanceMaternity;
     }
 
@@ -246,7 +250,7 @@ public class HRRecord implements Serializable {
         return leaveBalanceOther;
     }
 
-    public void setLeaveBalanceOther(int leaveBalanceOther) {
+    public void setLeaveBalanceOther( int leaveBalanceOther ) {
         this.leaveBalanceOther = leaveBalanceOther;
     }
 
@@ -254,14 +258,15 @@ public class HRRecord implements Serializable {
         return hrRecordUser;
     }
 
-    public void setHrRecordUser(Set<User> hrRecordUser) {
-		HashSet<User> set = new HashSet<User>();
-		hrRecordUser.forEach(user -> set.add(user));
+    public void setHrRecordUser( Set<User> hrRecordUser ) {
+        HashSet<User> set = new HashSet<User>();
+        hrRecordUser.forEach( user -> set.add( user ) );
 
-		/**
-		 * Date transfered from possibly non known implementation of Set interface to
-		 * the HashSet interface which can be easily transfered throw the RMI canal
-		 */
-		this.hrRecordUser = set;
+        /**
+         * Date transfered from possibly non known implementation of Set
+         * interface to the HashSet interface which can be easily transfered
+         * throw the RMI canal
+         */
+        this.hrRecordUser = set;
     }
 }

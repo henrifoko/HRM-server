@@ -5,30 +5,31 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@SuppressWarnings( "serial" )
 public class Leaves implements Serializable {
 
-    private int id;
-    private String userId;
-    private Date leaveApplyDate;
-    private Date leaveApplyFrom;
-    private Date leaveApplyTo;
-    private int totalDayOfLeave;
-    private String leaveReason;
-    private String leaveType;
-    private String leaveDescription;
-    private String leaveStatus;
-    private String applyWhom;
-    private String modifyToWhom;
-    private String leaveActionBy;
-    private String cancellationLeaveStatus;
+    private int       id;
+    private String    userId;
+    private Date      leaveApplyDate;
+    private Date      leaveApplyFrom;
+    private Date      leaveApplyTo;
+    private int       totalDayOfLeave;
+    private String    leaveReason;
+    private String    leaveType;
+    private String    leaveDescription;
+    private String    leaveStatus;
+    private String    applyWhom;
+    private String    modifyToWhom;
+    private String    leaveActionBy;
+    private String    cancellationLeaveStatus;
     private Set<User> userLeaves;
 
     public Leaves() {
     }
 
-    public Leaves(String userId, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveDescription,
-                  String leaveReason, String leaveType, String leaveStatus, String applyWhom, String modifyToWhom,
-                  String leaveActionBy, String cancellationLeaveStatus) {
+    public Leaves( String userId, Date leaveApplyFrom, Date leaveApplyTo, int totalDayOfLeave, String leaveDescription,
+            String leaveReason, String leaveType, String leaveStatus, String applyWhom, String modifyToWhom,
+            String leaveActionBy, String cancellationLeaveStatus ) {
         this.userId = userId;
         this.leaveApplyFrom = leaveApplyFrom;
         this.leaveApplyTo = leaveApplyTo;
@@ -43,7 +44,7 @@ public class Leaves implements Serializable {
         this.cancellationLeaveStatus = cancellationLeaveStatus;
     }
 
-    public Leaves(String cancellationLeaveStatus) {
+    public Leaves( String cancellationLeaveStatus ) {
         this.cancellationLeaveStatus = cancellationLeaveStatus;
     }
 
@@ -51,7 +52,7 @@ public class Leaves implements Serializable {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId( int id ) {
         this.id = id;
     }
 
@@ -59,7 +60,7 @@ public class Leaves implements Serializable {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId( String userId ) {
         this.userId = userId;
     }
 
@@ -67,7 +68,7 @@ public class Leaves implements Serializable {
         return leaveApplyDate;
     }
 
-    public void setLeaveApplyDate(Date leaveApplyDate) {
+    public void setLeaveApplyDate( Date leaveApplyDate ) {
         this.leaveApplyDate = leaveApplyDate;
     }
 
@@ -75,7 +76,7 @@ public class Leaves implements Serializable {
         return leaveApplyFrom;
     }
 
-    public void setLeaveApplyFrom(Date leaveApplyFrom) {
+    public void setLeaveApplyFrom( Date leaveApplyFrom ) {
         this.leaveApplyFrom = leaveApplyFrom;
     }
 
@@ -83,7 +84,7 @@ public class Leaves implements Serializable {
         return leaveApplyTo;
     }
 
-    public void setLeaveApplyTo(Date leaveApplyTo) {
+    public void setLeaveApplyTo( Date leaveApplyTo ) {
         this.leaveApplyTo = leaveApplyTo;
     }
 
@@ -91,7 +92,7 @@ public class Leaves implements Serializable {
         return totalDayOfLeave;
     }
 
-    public void setTotalDayOfLeave(int totalDayOfLeave) {
+    public void setTotalDayOfLeave( int totalDayOfLeave ) {
         this.totalDayOfLeave = totalDayOfLeave;
     }
 
@@ -99,7 +100,7 @@ public class Leaves implements Serializable {
         return leaveReason;
     }
 
-    public void setLeaveReason(String leaveReason) {
+    public void setLeaveReason( String leaveReason ) {
         this.leaveReason = leaveReason;
     }
 
@@ -107,7 +108,7 @@ public class Leaves implements Serializable {
         return leaveType;
     }
 
-    public void setLeaveType(String leaveType) {
+    public void setLeaveType( String leaveType ) {
         this.leaveType = leaveType;
     }
 
@@ -115,7 +116,7 @@ public class Leaves implements Serializable {
         return leaveDescription;
     }
 
-    public void setLeaveDescription(String leaveDescription) {
+    public void setLeaveDescription( String leaveDescription ) {
         this.leaveDescription = leaveDescription;
     }
 
@@ -123,7 +124,7 @@ public class Leaves implements Serializable {
         return leaveStatus;
     }
 
-    public void setLeaveStatus(String leaveStatus) {
+    public void setLeaveStatus( String leaveStatus ) {
         this.leaveStatus = leaveStatus;
     }
 
@@ -131,7 +132,7 @@ public class Leaves implements Serializable {
         return applyWhom;
     }
 
-    public void setApplyWhom(String applyWhom) {
+    public void setApplyWhom( String applyWhom ) {
         this.applyWhom = applyWhom;
     }
 
@@ -139,7 +140,7 @@ public class Leaves implements Serializable {
         return modifyToWhom;
     }
 
-    public void setModifyToWhom(String modifyToWhom) {
+    public void setModifyToWhom( String modifyToWhom ) {
         this.modifyToWhom = modifyToWhom;
     }
 
@@ -147,7 +148,7 @@ public class Leaves implements Serializable {
         return leaveActionBy;
     }
 
-    public void setLeaveActionBy(String leaveActionBy) {
+    public void setLeaveActionBy( String leaveActionBy ) {
         this.leaveActionBy = leaveActionBy;
     }
 
@@ -155,7 +156,7 @@ public class Leaves implements Serializable {
         return cancellationLeaveStatus;
     }
 
-    public void setCancellationLeaveStatus(String cancellationLeaveStatus) {
+    public void setCancellationLeaveStatus( String cancellationLeaveStatus ) {
         this.cancellationLeaveStatus = cancellationLeaveStatus;
     }
 
@@ -163,14 +164,15 @@ public class Leaves implements Serializable {
         return userLeaves;
     }
 
-    public void setUserLeaves(Set<User> userLeaves) {
-		HashSet<User> set = new HashSet<User>();
-		userLeaves.forEach(user -> set.add(user));
+    public void setUserLeaves( Set<User> userLeaves ) {
+        HashSet<User> set = new HashSet<User>();
+        userLeaves.forEach( user -> set.add( user ) );
 
-		/**
-		 * Date transfered from possibly non known implementation of Set interface to
-		 * the HashSet interface which can be easily transfered throw the RMI canal
-		 */
-		this.userLeaves = set;
+        /**
+         * Date transfered from possibly non known implementation of Set
+         * interface to the HashSet interface which can be easily transfered
+         * throw the RMI canal
+         */
+        this.userLeaves = set;
     }
 }

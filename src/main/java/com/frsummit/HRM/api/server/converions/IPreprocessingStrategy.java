@@ -1,6 +1,13 @@
-package com.frsummit.HRM.api.server;
+package com.frsummit.HRM.api.server.converions;
 
-public interface PreProcessingStrategy {
+import com.frsummit.HRM.api.server.exception.PreProcessingException;
+
+/**
+ * 
+ * @author hfoko
+ *
+ */
+public interface IPreprocessingStrategy {
 
     /**
      * Performs all preliminary processing on the parameters. These processes
@@ -11,5 +18,5 @@ public interface PreProcessingStrategy {
      *            - The data that have to be processed/converted
      * @return Object[] - data converted
      */
-    public Object[] process( Object[] data );
+    public Object[] process( Object[] data ) throws PreProcessingException;
 }

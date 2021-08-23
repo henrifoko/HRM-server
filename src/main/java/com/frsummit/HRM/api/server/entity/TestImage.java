@@ -2,8 +2,9 @@ package com.frsummit.HRM.api.server.entity;
 
 import java.io.Serializable;
 
+@SuppressWarnings( "serial" )
 public class TestImage implements Serializable {
-    private long id;
+    private long   id;
     private String fileName;
     private byte[] data;
 
@@ -11,7 +12,7 @@ public class TestImage implements Serializable {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId( long id ) {
         this.id = id;
     }
 
@@ -19,7 +20,7 @@ public class TestImage implements Serializable {
         return fileName;
     }
 
-    public void setFileName(String fileName) {
+    public void setFileName( String fileName ) {
         this.fileName = fileName;
     }
 
@@ -27,7 +28,7 @@ public class TestImage implements Serializable {
         return data;
     }
 
-    public void setData(byte[] data) {
+    public void setData( byte[] data ) {
         this.data = data;
     }
 }

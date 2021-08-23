@@ -2,9 +2,10 @@ package com.frsummit.HRM.api.server.entity;
 
 import java.io.Serializable;
 
+@SuppressWarnings( "serial" )
 public class Message implements Serializable {
 
-    private int messageId;
+    private int    messageId;
     private String messageUserId;
     private String leaveId;
     private String message;
@@ -13,7 +14,7 @@ public class Message implements Serializable {
     public Message() {
     }
 
-    public Message(String leaveId, String message, String messageCheck) {
+    public Message( String leaveId, String message, String messageCheck ) {
         this.leaveId = leaveId;
         this.message = message;
         this.messageCheck = messageCheck;
@@ -24,7 +25,7 @@ public class Message implements Serializable {
         return messageId;
     }
 
-    public void setMessageId(int messageId) {
+    public void setMessageId( int messageId ) {
         this.messageId = messageId;
     }
 
@@ -32,7 +33,7 @@ public class Message implements Serializable {
         return messageUserId;
     }
 
-    public void setMessageUserId(String messageUserId) {
+    public void setMessageUserId( String messageUserId ) {
         this.messageUserId = messageUserId;
     }
 
@@ -40,7 +41,7 @@ public class Message implements Serializable {
         return leaveId;
     }
 
-    public void setLeaveId(String leaveId) {
+    public void setLeaveId( String leaveId ) {
         this.leaveId = leaveId;
     }
 
@@ -48,7 +49,7 @@ public class Message implements Serializable {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage( String message ) {
         this.message = message;
     }
 
@@ -56,7 +57,7 @@ public class Message implements Serializable {
         return messageCheck;
     }
 
-    public void setMessageCheck(String messageCheck) {
+    public void setMessageCheck( String messageCheck ) {
         this.messageCheck = messageCheck;
     }
 }
